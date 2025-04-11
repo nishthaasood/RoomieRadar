@@ -6,44 +6,36 @@
     <title>RoomieRadar</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">RoomieRadar</div>
-
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Matches</a>
-            <a href="#">Messaging</a>
-            <a href="#">My Listings</a>
-            <a href="#">Find Roommates</a>
-        </div>
-        <div class="navbar-actions desktop-only">
-            <!-- Notifications Dropdown -->
-            <div class="notifications-dropdown">
-                <button class="btn-icon notification-btn" aria-label="Notifications">
-                    <i data-lucide="bell"></i>
-                    <span class="notification-badge" id="notification-count">0</span>
-                </button>
-                <div class="dropdown-content" id="notifications-dropdown">
-                    <h3 class="dropdown-title">Notifications</h3>
-                    <div class="dropdown-divider"></div>
-                    <div id="notifications-list">
-                        <p class="empty-notifications">No notifications yet</p>
-                    </div>
-                </div> 
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <a href="index.html" class="logo">RoomieRadar</a>
             </div>
+  
+            <!-- Desktop Navigation -->
+            <nav class="navbar-links desktop-only">
+                <a href="index.html" class="navbar-link active">Home</a>
+                <a href="matches.html" class="navbar-link">Matches</a>
+                <a href="messages.html" class="navbar-link">Messages</a>
+                <a href="food-services.html" class="navbar-link">Food Services</a>
+            </nav>
+  
+            <div class="navbar-actions desktop-only">
+                <a href="login.html" class="btn btn-ghost">Log in</a>
+                <a href="signup.html" class="btn btn-primary">Sign up</a>
+            </div>
+  
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button mobile-only" aria-label="Open menu">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
-        <div class="auth-buttons">
-            <a href="login.html" class="btn btn-ghost">Log In</a>
-            <a href="signup.html" class="btn btn-primary">Sign Up</a>
-        </div>
-        <!-- Mobile Menu Button -->
-        <button class="mobile-menu-button mobile-only" aria-label="Open menu">
-            <i data-lucide="menu"></i>
-        </button>
-
+  
         <!-- Mobile Menu (hidden by default) -->
         <div class="mobile-menu mobile-only" style="display: none;">
             <div class="container">
@@ -51,31 +43,37 @@
                 <a href="matches.html" class="mobile-menu-link">Matches</a>
                 <a href="messages.html" class="mobile-menu-link">Messages</a>
                 <a href="food-services.html" class="mobile-menu-link">Food Services</a>
-                <a href="rooms.html" class="mobile-menu-link">Rooms</a>
                 <div class="mobile-menu-actions">
                     <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
                     <a href="signup.html" class="btn btn-primary btn-full">Sign up</a>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="main-section">
-        <div class="text-content">
-            <h1>Find Your Perfect <br></br><span>Roommate</span> Match.</h1>
-            <p class="discription">Shared rent, shared space, shared dreams.<br></br> RoomieRadar helps you find more than just a roommate — find a co-chef, co-adventurer, and co-laughter. Connect and find your ideal RoomMate.</p>
-            <div class="buttons">
-                <a href="signup.html" class="btn btn-primary btn-lg">
-                    Get Started <i data-lucide="arrow-right" class="icon-sm"></i>
-                </a>
+    <main>
+        <section class="main-section">
+            <div class="container">
+                <div class="main-content">
+                    <div class="text-content">
+                        <h1 class="title">Find Your Perfect <span class="gradient-text">Roommate</span> Match.</h1>
+                        <p class="description">Shared rent, shared space, shared dreams.<br></br> RoomieRadar helps you find more than just a roommate — find a co-chef, co-adventurer, and co-laughter. Connect and find your ideal RoomMate.</p>
+                        <div class="buttons">
+                            <a href="signup.html" class="btn btn-primary btn-lg">
+                                Get Started <i class="fas fa-arrow-right icon-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                <div class="image-content">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/bf/dd/5b/bfdd5b50db27eadef5b98c5d42fae150.jpg" alt="Roommate Image">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="image-content">
-            <img src="https://i.pinimg.com/736x/bf/dd/5b/bfdd5b50db27eadef5b98c5d42fae150.jpg" alt="Roommate Image" class="roomate-image">
-        </div>
+        </section>
         <!-- Background decorative elements -->
-        <div class="hero-bg-element hero-bg-1"></div>
-        <div class="hero-bg-element hero-bg-2"></div>
+        <div class="bg-element bg-element1"></div>
+        <div class="bg-element bg-element2"></div>
     </main>
         <!-- Features Section -->
     <section class="features-section" id="features">
@@ -193,18 +191,18 @@
         </p>
         <div class="social-links">
             <a href="#" aria-label="Facebook">
-                <i data-lucide="facebook"></i>
+                <i class="fab fa-facebook-f"></i>
             </a>
             <a href="#" aria-label="Instagram">
-                <i data-lucide="instagram"></i>
+                <i class="fab fa-instagram"></i>
             </a>
             <a href="#" aria-label="Twitter">
-                <i data-lucide="twitter"></i>
+                <i class="fab fa-twitter"></i>
             </a>
         </div>    
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
