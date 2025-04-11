@@ -241,6 +241,34 @@ h6 {
   gap: 1rem;
 }
 
+.notification-button {
+  position: relative;
+  background-color:transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.notification-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #ef2b84;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 999px;
+  line-height: 1;
+  display: inline-block;
+}
+
+
 .mobile-menu-button {
   background: none;
   border: none;
