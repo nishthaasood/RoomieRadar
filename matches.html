@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matches - RoomieRadar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navigation -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-logo">
+          <a href="index.html" class="logo">RoomieRadar</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar-links desktop-only">
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="matches.html" class="navbar-link active">Matches</a>
+          <a href="messages.html" class="navbar-link">Messages</a>
+         
+        </nav>
+
+        <div class="navbar-actions desktop-only">
+          <a href="login.html" class="btn btn-ghost">Log in</a>
+          <a href="signup.html" class="btn btn-primary">Sign up</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button mobile-only" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div class="mobile-menu mobile-only" style="display: none;">
+        <div class="container">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="matches.html" class="mobile-menu-link active">Matches</a>
+          <a href="messages.html" class="mobile-menu-link">Messages</a>
+          
+          <div class="mobile-menu-actions">
+            <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
+            <a href="signup.html" class="btn btn-primary btn-full">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Your Matches</h1>
+            <p class="page-description">Find your perfect roommate based on compatibility.</p>
+          </div>
+
+          <button id="filter-button" class="btn btn-outline">
+            <i data-lucide="filter" class="icon-sm"></i> Filter Matches
+          </button>
+        </div>
+
+        <!-- Filter Sidebar (hidden by default) -->
+        <div id="filter-sidebar" class="filter-sidebar">
+          <div class="filter-header">
+            <h2 class="filter-title">Filter Matches</h2>
+            <button id="close-filter" class="close-button">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+          <div class="filter-content">
+            <div class="filter-group">
+              <label class="filter-label">Minimum Compatibility Score: <span id="compatibility-value">70</span>%</label>
+              <input type="range" id="compatibility-slider" min="50" max="100" value="70" class="slider">
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label">Preferred Qualities</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="clean-filter" name="qualities" value="clean">
+                  <label for="clean-filter">Clean</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="quiet-filter" name="qualities" value="quiet">
+                  <label for="quiet-filter">Quiet</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="organized-filter" name="qualities" value="organized">
+                  <label for="organized-filter">Organized</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="communicative-filter" name="qualities" value="communicative">
+                  <label for="communicative-filter">Communicative</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label">Deal Breakers to Avoid</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="smoking-filter" name="dealBreakers" value="smoking">
+                  <label for="smoking-filter">Smoking</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="loud-music-filter" name="dealBreakers" value="loud-music">
+                  <label for="loud-music-filter">Loud Music</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="pets-filter" name="dealBreakers" value="pets">
+                  <label for="pets-filter">Pets</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="overnight-guests-filter" name="dealBreakers" value="overnight-guests">
+                  <label for="overnight-guests-filter">Frequent Overnight Guests</label>
+                </div>
+              </div>
+            </div>
+
+            <button id="apply-filters" class="btn btn-primary btn-full">Apply Filters</button>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tabs-list">
+            <button class="tab-button active" data-tab="all">All Matches</button>
+            <button class="tab-button" data-tab="ai-suggestions">AI Suggestions</button>
+            <button class="tab-button" data-tab="favorites">Favorites</button>
+            <button class="tab-button" data-tab="new">New</button>
+          </div>
+
+          <!-- All Matches Tab -->
+          <div class="tab-content active" id="all-tab">
+            <div id="matches-container" class="matches-grid">
+              <!-- Match cards will be dynamically inserted here -->
+            </div>
+            <div id="no-matches" class="empty-state" style="display: none;">
+              <p class="empty-message">No matches found with the current filters.</p>
+              <button id="reset-filters" class="btn btn-link">Reset filters</button>
+            </div>
+          </div>
+
+          <!-- AI Suggestions Tab -->
+          <div class="tab-content" id="ai-suggestions-tab">
+            <div id="ai-loading" class="loading-state">
+              <p class="loading-message">Loading AI-powered suggestions...</p>
+            </div>
+            <div id="ai-matches-container" class="matches-grid" style="display: none;">
+              <!-- AI match cards will be dynamically inserted here -->
+            </div>
+            <div id="no-ai-matches" class="empty-state" style="display: none;">
+              <p class="empty-message">GROQ AI is analyzing your preferences to find perfect matches.</p>
+              <p class="empty-submessage">Check back soon for personalized roommate suggestions!</p>
+            </div>
+          </div>
+
+          <!-- Favorites Tab -->
+          <div class="tab-content" id="favorites-tab">
+            <div class="empty-state">
+              <p class="empty-message">You haven't added any favorites yet.</p>
+              <p class="empty-submessage">Like profiles to add them to your favorites.</p>
+            </div>
+          </div>
+
+          <!-- New Tab -->
+          <div class="tab-content" id="new-tab">
+            <div class="empty-state">
+              <p class="empty-message">No new matches at the moment.</p>
+              <p class="empty-submessage">Check back later for new potential roommates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Match Card Template (hidden) -->
+    <template id="match-card-template">
+      <div class="match-card">
+        <div class="match-image-container">
+          <img class="match-image" src="/placeholder.svg" alt="">
+          <div class="match-badge compatibility-badge"></div>
+          <div class="match-badge ai-badge" style="display: none;">AI Suggested</div>
+        </div>
+        <div class="match-header">
+          <h3 class="match-name"></h3>
+          <p class="match-occupation"></p>
+        </div>
+        <div class="match-content">
+          <p class="match-bio"></p>
+          <div class="match-location">
+            <i data-lucide="map-pin" class="icon-xs"></i>
+            <span class="location-text"></span>
+          </div>
+          <p class="match-distance"></p>
+          <div class="match-section">
+            <p class="section-title">Qualities</p>
+            <div class="tags-container qualities-container"></div>
+          </div>
+          <div class="match-section">
+            <p class="section-title">Deal Breakers</p>
+            <div class="tags-container dealbreakers-container"></div>
+          </div>
+        </div>
+        <div class="match-footer">
+          <div class="match-actions">
+            <button class="btn btn-icon btn-outline dislike-btn">
+              <i data-lucide="thumbs-down" class="icon-sm"></i>
+            </button>
+            <button class="btn btn-icon btn-outline favorite-btn">
+              <i data-lucide="star" class="icon-sm"></i>
+            </button>
+            <button class="btn btn-icon btn-outline like-btn">
+              <i data-lucide="thumbs-up" class="icon-sm"></i>
+            </button>
+          </div>
+          <a href="#" class="btn btn-primary message-btn">
+            <i data-lucide="message-square" class="icon-sm"></i> Message
+          </a>
+        </div>
+      </div>
+    </template>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="copyright">
+            © <span id="current-year"></span> RoomieMatch. All rights reserved.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/matches.js"></script>
+</body>
+</html>
