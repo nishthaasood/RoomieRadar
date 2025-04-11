@@ -1,0 +1,103 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9fafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #1f2937;
+  }
+  
+  p {
+    color: #6b7280;
+    font-size: 14px;
+  }
+  
+  .signup-link {
+    color: #a855f7;
+    text-decoration: none;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 24px;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .card h3 {
+    margin: 0 0 4px;
+  }
+  
+  .description {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 16px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #374151;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    font-size: 13px;
+  }
+  
+  .forgot {
+    margin-top: 10px;
+    color: #a855f7;
+    text-decoration: none;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    background: linear-gradient(to right, #ec4899, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #db2777, #7c3aed);
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
