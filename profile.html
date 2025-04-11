@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Profile - RoomieRadar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navigation -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-logo">
+          <a href="index.html" class="logo">RoomieRadar</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar-links desktop-only">
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="matches.html" class="navbar-link">Matches</a>
+          <a href="messages.html" class="navbar-link">Messages</a>
+          
+        </nav>
+
+        <div class="navbar-actions desktop-only">
+          <a href="login.html" class="btn btn-ghost">Log in</a>
+          <a href="signup.html" class="btn btn-primary">Sign up</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button mobile-only" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div class="mobile-menu mobile-only" style="display: none;">
+        <div class="container">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="matches.html" class="mobile-menu-link">Matches</a>
+          <a href="messages.html" class="mobile-menu-link">Messages</a>
+         
+          <div class="mobile-menu-actions">
+            <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
+            <a href="signup.html" class="btn btn-primary btn-full">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container profile-container">
+        <h1 class="page-title">Create Your Profile</h1>
+
+        <div class="tabs">
+          <div class="tabs-list">
+            <button class="tab-button active" data-tab="basic-info">Basic Info</button>
+            <button class="tab-button" data-tab="preferences">Preferences</button>
+            <button class="tab-button" data-tab="deal-breakers">Deal Breakers</button>
+            <button class="tab-button" data-tab="location">Location</button>
+            <button class="tab-button" data-tab="review">Review</button>
+          </div>
+
+          <!-- Basic Info Tab -->
+          <div class="tab-content active" id="basic-info-tab">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Basic Information</h2>
+                <p class="card-description">Tell us about yourself</p>
+              </div>
+              <div class="card-content">
+                <div class="form-group">
+                  <label for="age" class="form-label">Age</label>
+                  <input type="number" id="age" name="age" class="form-input" placeholder="25">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Gender</label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="female" name="gender" value="female" checked>
+                      <label for="female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="male" name="gender" value="male">
+                      <label for="male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
+                      <label for="prefer-not-to-say">Prefer not to say</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="occupation" class="form-label">Occupation</label>
+                  <input type="text" id="occupation" name="occupation" class="form-input" placeholder="Software Engineer">
+                </div>
+
+                <div class="form-group">
+                  <label for="bio" class="form-label">About Me</label>
+                  <textarea id="bio" name="bio" class="form-textarea" rows="4" placeholder="Tell potential roommates about yourself, your lifestyle, and what makes you a great roommate."></textarea>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary next-tab" data-next="preferences">
+                  Next <i data-lucide="arrow-right" class="icon-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preferences Tab -->
+          <div class="tab-content" id="preferences-tab">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Roommate Preferences</h2>
+                <p class="card-description">What qualities are you looking for in a roommate?</p>
+              </div>
+              <div class="card-content">
+                <div class="form-group">
+                  <label class="form-label">Cleanliness Level</label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="very-clean" name="cleanliness" value="very-clean">
+                      <label for="very-clean">Very clean and organized</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="average" name="cleanliness" value="average" checked>
+                      <label for="average">Average cleanliness</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="relaxed" name="cleanliness" value="relaxed">
+                      <label for="relaxed">Relaxed about cleanliness</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Sleep Schedule</label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="early-bird" name="sleepSchedule" value="early-bird">
+                      <label for="early-bird">Early bird (early to bed, early to rise)</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="night-owl" name="sleepSchedule" value="night-owl" checked>
+                      <label for="night-owl">Night owl (late to bed, late to rise)</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="flexible" name="sleepSchedule" value="flexible">
+                      <label for="flexible">Flexible schedule</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Social Preferences</label>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="very-social" name="socialPreferences" value="very-social">
+                      <label for="very-social">Very social, enjoy hanging out with roommates</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="balanced" name="socialPreferences" value="balanced" checked>
+                      <label for="balanced">Balanced, sometimes social, sometimes private</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="private" name="socialPreferences" value="private">
+                      <label for="private">Private, prefer minimal interaction</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Preferred Qualities (Select all that apply)</label>
+                  <div class="checkbox-grid">
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="quiet" name="qualities" value="quiet">
+                      <label for="quiet">Quiet</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="respectful" name="qualities" value="respectful">
+                      <label for="respectful">Respectful of privacy</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="tidy" name="qualities" value="tidy">
+                      <label for="tidy">Tidy in common areas</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="pays-on-time" name="qualities" value="pays-on-time">
+                      <label for="pays-on-time">Pays bills on time</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="communicative" name="qualities" value="communicative">
+                      <label for="communicative">Communicative</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="considerate" name="qualities" value="considerate">
+                      <label for="considerate">Considerate</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-outline prev-tab" data-prev="basic-info">
+                  <i data-lucide="arrow-left" class="icon-sm"></i> Back
+                </button>
+                <button class="btn btn-primary next-tab" data-next="deal-breakers">
+                  Next <i data-lucide="arrow-right" class="icon-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal Breakers Tab -->
+          <div class="tab-content" id="deal-breakers-tab">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Deal Breakers</h2>
+                <p class="card-description">What are your absolute deal breakers for a roommate?</p>
+              </div>
+              <div class="card-content">
+                <div class="form-group">
+                  <label class="form-label">Select Your Deal Breakers (Select all that apply)</label>
+                  <div class="checkbox-grid">
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="smoking" name="dealBreakers" value="smoking">
+                      <label for="smoking">Smoking</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="pets" name="dealBreakers" value="pets">
+                      <label for="pets">Pets</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="loud-music" name="dealBreakers" value="loud-music">
+                      <label for="loud-music">Loud music/parties</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="overnight-guests" name="dealBreakers" value="overnight-guests">
+                      <label for="overnight-guests">Frequent overnight guests</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="alcohol" name="dealBreakers" value="alcohol">
+                      <label for="alcohol">Alcohol consumption</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="early-riser" name="dealBreakers" value="early-riser">
+                      <label for="early-riser">Early riser</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="night-owl-db" name="dealBreakers" value="night-owl">
+                      <label for="night-owl-db">Night owl</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" id="shared-food" name="dealBreakers" value="shared-food">
+                      <label for="shared-food">Sharing food</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="other-deal-breakers" class="form-label">Other Deal Breakers</label>
+                  <textarea id="other-deal-breakers" name="otherDealBreakers" class="form-textarea" rows="3" placeholder="List any other deal breakers not mentioned above"></textarea>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-outline prev-tab" data-prev="preferences">
+                  <i data-lucide="arrow-left" class="icon-sm"></i> Back
+                </button>
+                <button class="btn btn-primary next-tab" data-next="location">
+                  Next <i data-lucide="arrow-right" class="icon-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Tab -->
+          <div class="tab-content" id="location-tab">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Location Preferences</h2>
+                <p class="card-description">Where are you looking for a roommate?</p>
+              </div>
+              <div class="card-content">
+                <div class="form-group">
+                  <label for="current-location" class="form-label">Current Location</label>
+                  <div class="location-input">
+                    <i data-lucide="map-pin" class="location-icon"></i>
+                    <select id="current-location" name="currentLocation" class="form-select">
+                      <option value="">Select your current location</option>
+                      <option value="Rohini Sector 17">Rohini Sector 17.</option>
+                      <option value="Rohini Sector 16">Rohini Sector 16.</option>
+                      <option value="Rithala">Rithala.</option>
+                      <option value="Pitampura">Pitampura.</option>
+                      <option value="Samaypur Badli.">Samaypur Badli.</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Preferred Neighborhoods</label>
+                  <div class="neighborhood-input">
+                    <input type="text" id="neighborhood" class="form-input" placeholder="Add a neighborhood">
+                    <button type="button" id="add-neighborhood" class="btn btn-outline btn-sm">Add</button>
+                  </div>
+                  <div id="neighborhoods-container" class="tags-container">
+                    <span class="tag">
+                      Downtown
+                      <button type="button" class="tag-remove" data-value="Downtown">×</button>
+                    </span>
+                    <span class="tag">
+                      Midtown
+                      <button type="button" class="tag-remove" data-value="Midtown">×</button>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="max-distance" class="form-label">Maximum Distance</label>
+                  <select id="max-distance" name="maxDistance" class="form-select">
+                    <option value="0.5">Within 500 meter</option>
+                    <option value="1" selected>Within 1 km</option>
+                    <option value="1.5">Within 1.5 km</option>
+                    <option value="2">Within 2 km</option>
+                    <option value="5">Within 5 km</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="move-in-date" class="form-label">Preferred Move-in Date</label>
+                  <input type="date" id="move-in-date" name="moveInDate" class="form-input">
+                </div>
+
+                <div class="form-group">
+                  <label for="rent-budget" class="form-label">Monthly Rent Budget</label>
+                  <div class="budget-input">
+                    <span class="currency-symbol">₹</span>
+                    <input type="number" id="rent-budget" name="rentBudget" class="form-input" placeholder="1000">
+                  </div>
+                  <p class="input-help">Maximum amount you're willing to pay per month</p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-outline prev-tab" data-prev="deal-breakers">
+                  <i data-lucide="arrow-left" class="icon-sm"></i> Back
+                </button>
+                <button class="btn btn-primary next-tab" data-next="review">
+                  Next <i data-lucide="arrow-right" class="icon-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review Tab -->
+          <div class="tab-content" id="review-tab">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Review Your Profile</h2>
+                <p class="card-description">Make sure everything looks good before submitting</p>
+              </div>
+              <div class="card-content">
+                <div class="review-section">
+                  <h3 class="review-title">Basic Information</h3>
+                  <div class="review-content">
+                    <p>Age: <span id="review-age">25</span></p>
+                    <p>Gender: <span id="review-gender">Female</span></p>
+                    <p>Occupation: <span id="review-occupation">Software Engineer</span></p>
+                    <p>Bio: <span id="review-bio">I'm a clean, respectful professional who enjoys a balance of socializing and quiet time...</span></p>
+                  </div>
+                </div>
+
+                <div class="review-section">
+                  <h3 class="review-title">Roommate Preferences</h3>
+                  <div class="review-content">
+                    <p>Cleanliness: <span id="review-cleanliness">Average cleanliness</span></p>
+                    <p>Sleep Schedule: <span id="review-sleep">Night owl</span></p>
+                    <p>Social Preferences: <span id="review-social">Balanced</span></p>
+                    <p>Preferred Qualities: <span id="review-qualities">Quiet, Respectful of privacy, Pays bills on time, Communicative</span></p>
+                  </div>
+                </div>
+
+                <div class="review-section">
+                  <h3 class="review-title">Deal Breakers</h3>
+                  <div class="review-content">
+                    <p>Deal Breakers: <span id="review-dealbreakers">Smoking, Loud music/parties, Frequent overnight guests</span></p>
+                    <p>Other: <span id="review-other-dealbreakers">No sharing of personal items without permission</span></p>
+                  </div>
+                </div>
+
+                <div class="review-section">
+                  <h3 class="review-title">Location Preferences</h3>
+                  <div class="review-content">
+                    <p>Current Location: <span id="review-location">Rohini Sector 17</span></p>
+                    <p>Preferred Neighborhoods: <span id="review-neighborhoods">Near Bansiwala</span></p>
+                    <p>Maximum Distance: <span id="review-distance">Within 500 meters</span></p>
+                    <p>Move-in Date: <span id="review-movein">05/15/2024</span></p>
+                    <p>Monthly Budget: <span id="review-budget">₹1,000</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-outline prev-tab" data-prev="location">
+                  <i data-lucide="arrow-left" class="icon-sm"></i> Back
+                </button>
+                <button id="complete-profile" class="btn btn-primary">
+                  Complete Profile <i data-lucide="check" class="icon-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="copyright">
+            © <span id="current-year"></span> RoomieMatch. All rights reserved.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/profile.js"></script>
+</body>
+</html>
