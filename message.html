@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages - RoomieRadar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navigation -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-logo">
+          <a href="index.html" class="logo">RoomieRadar</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar-links desktop-only">
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="matches.html" class="navbar-link">Matches</a>
+          <a href="messages.html" class="navbar-link active">Messages</a>
+        </nav>
+
+        <div class="navbar-actions desktop-only">
+          <a href="login.html" class="btn btn-ghost">Log in</a>
+          <a href="signup.html" class="btn btn-primary">Sign up</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button mobile-only" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div class="mobile-menu mobile-only" style="display: none;">
+        <div class="container">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="matches.html" class="mobile-menu-link">Matches</a>
+          <a href="messages.html" class="mobile-menu-link active">Messages</a>
+          <div class="mobile-menu-actions">
+            <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
+            <a href="signup.html" class="btn btn-primary btn-full">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1 class="page-title">Messages</h1>
+
+        <div class="messages-container">
+          <!-- Conversations List -->
+          <div class="conversations-container">
+            <div class="conversations-header">
+              <div class="search-input">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-conversations" placeholder="Find old chats" class="form-input">
+              </div>
+            </div>
+
+            <div id="conversations-list" class="conversations-list">
+              <!-- Conversation items will be dynamically inserted here -->
+            </div>
+          </div>
+
+          <!-- Chat Area -->
+          <div class="chat">
+            <div id="empty-chat" class="empty-chat">
+              <div class="empty-chat-content">
+                <p class="empty-message">Choose a chat and say hey!</p>
+                <p class="empty-submessage">Or find new people to vibe with!</p>
+              </div>
+            </div>
+
+            <div id="active-chat" class="active-chat" style="display: none;">
+              <!-- Chat Header -->
+              <div class="chat-header">
+                <div class="chat-user">
+                  <div class="user-avatar">
+                    <img id="chat-user-avatar" src="/placeholder.svg" alt="">
+                  </div>
+                  <div class="user-info">
+                    <h3 id="chat-user-name" class="user-name"></h3>
+                    <p class="user-status">Online</p>
+                  </div>
+                </div>
+                <div class="chat-actions">
+                  <button class="btn btn-icon btn-ghost">
+                    <i data-lucide="phone"></i>
+                  </button>
+                  <button class="btn btn-icon btn-ghost">
+                    <i data-lucide="video"></i>
+                  </button>
+                  <button class="btn btn-icon btn-ghost">
+                    <i data-lucide="info"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Messages -->
+              <div id="messages-container" class="messages-container">
+                <!-- Messages will be dynamically inserted here -->
+              </div>
+
+              <!-- Message Input -->
+              <div class="message-input-container">
+                <form id="message-form" class="message-form">
+                  <button type="button" id="ai-assist-btn" class="btn btn-icon btn-outline">
+                    <i data-lucide="sparkles" class="icon-sm ai-icon"></i>
+                  </button>
+                  <input type="text" id="message-input" placeholder="Text here" class="form-input">
+                  <button type="submit" id="send-message" class="btn btn-primary btn-icon">
+                    <i data-lucide="send" class="icon-sm"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Conversation Item Template (hidden) -->
+    <template id="conversation-item-template">
+      <div class="conversation-item">
+        <div class="conversation-avatar">
+          <img class="avatar-image" src="/placeholder.svg" alt="">
+        </div>
+        <div class="conversation-content">
+          <div class="conversation-header">
+            <h3 class="conversation-name"></h3>
+            <span class="conversation-time"></span>
+          </div>
+          <p class="conversation-preview"></p>
+        </div>
+        <div class="unread-indicator" style="display: none;"></div>
+      </div>
+    </template>
+
+    <!-- Message Template (hidden) -->
+    <template id="message-template">
+      <div class="message">
+        <div class="message-avatar" style="display: none;">
+          <img class="avatar-image" src="/placeholder.svg" alt="">
+        </div>
+        <div class="message-content">
+          <div class="message-bubble">
+            <p class="message-text"></p>
+          </div>
+          <p class="message-time"></p>
+        </div>
+      </div>
+    </template>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="copyright">
+            © <span id="current-year"></span> RoomieRadar. All rights reserved.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+  </div>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/messages.js"></script>
+</body>
+</html>
