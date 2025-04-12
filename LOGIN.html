@@ -5,8 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
   <link rel="stylesheet" href="LOGIN.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <header class="navbar">
+    <div class="container">
+        <div class="navbar-logo">
+          <a href="index.html" class="logo">RoomieRadar</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar-links desktop-only">
+          <a href="index.html" class="navbar-link active">Home</a>
+          <a href="matches.html" class="navbar-link">Matches</a>
+          <a href="messages.html" class="navbar-link">Messages</a>
+          <a href="listing.html" class="navbar-link">List A Room</a>
+          <a href="roommate.html" class="navbar-link">Find A RoomMate</a>
+        </nav>
+
+        <div>
+          <button class="notification-button">
+            <a href="notification.html" class="navbar-link"><i class="bell-icon" data-lucide="bell"></i> </a>
+            <span class="notification-badge hidden">0</span>
+          </button>
+        </div>
+
+        <div class="navbar-actions desktop-only">
+          <a href="login.html" class="btn btn-ghost">Log in</a>
+          <a href="signup.html" class="btn btn-primary">Sign up</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button mobile-only" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="mobile-menu mobile-only" style="display: none;">
+        <div class="container">
+          <a href="index.html" class="mobile-menu-link active">Home</a>
+          <a href="matches.html" class="mobile-menu-link">Matches</a>
+          <a href="messages.html" class="mobile-menu-link">Messages</a>
+          <a href="listing.html" class="mobile-menu-link">List A Room </a>
+          <a href="roommate.html" class="mobile-menu-link">Find A RoomMate</a>
+        <div class="mobile-menu-actions">
+            <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
+            <a href="signup.html" class="btn btn-primary btn-full">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <div class="back-link">
       <a href="index.html"><span>&larr;</span> Back to home</a>
@@ -38,6 +90,7 @@
     </div>
   </div>
 
-  <script src="LOGIN.js"></script>
+  <script src="index.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

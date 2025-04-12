@@ -35,12 +35,6 @@ body {
   line-height: 1.5;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 main {
   flex: 1;
 }
@@ -81,13 +75,13 @@ h6 {
   color: var(--muted-foreground);
 }
 
-.section-title {
+.title {
   font-size: 1.875rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
-.section-description {
+.description {
   color: var(--muted-foreground);
   max-width: 42rem;
   margin: 0 auto 2rem;
