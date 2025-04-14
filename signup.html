@@ -6,6 +6,7 @@
   <title>Sign Up - RoomieRadar</title>
   <link rel="stylesheet" href="signup.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -23,109 +24,117 @@
             <a href="index.html" class="navbar-link">Home</a>
             <a href="matches.html" class="navbar-link">Matches</a>
             <a href="messages.html" class="navbar-link">Messages</a>
-          </nav>
-  
-          <div class="navbar-actions desktop-only">
-            <a href="login.html" class="btn btn-ghost">Log in</a>
-            <a href="signup.html" class="btn btn-primary active">Sign up</a>
-          </div>
-  
-          <!-- Mobile Menu Button -->
-          <button class="mobile-menu-button mobile-only" aria-label="Open menu">
-            <i data-lucide="menu"></i>
+            <a href="listing.html" class="navbar-link">List A Room</a>
+            <a href="roommate.html" class="navbar-link">Find A RoomMate</a>
+        </nav>
+
+        <div>
+          <button class="notification-button">
+            <a href="notification.html" class="navbar-link"><i class="bell-icon" data-lucide="bell"></i> </a>
+            <span class="notification-badge hidden">0</span>
           </button>
         </div>
   
+        <div class="navbar-actions desktop-only">
+          <a href="login.html" class="btn btn-ghost">Log in</a>
+          <a href="signup.html" class="btn btn-primary active">Sign up</a>
+        </div>
+  
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button mobile-only" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+  
         <!-- Mobile Menu (hidden by default) -->
-        <div class="mobile-menu mobile-only" style="display: none;">
-          <div class="container">
-            <a href="index.html" class="mobile-menu-link">Home</a>
-            <a href="matches.html" class="mobile-menu-link">Matches</a>
-            <a href="messages.html" class="mobile-menu-link">Messages</a>
-            <div class="mobile-menu-actions">
-              <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
-              <a href="signup.html" class="btn btn-primary btn-full active">Sign up</a>
-            </div>
+      <div class="mobile-menu mobile-only" style="display: none;">
+        <div class="container">
+          <a href="index.html" class="mobile-menu-link">Home</a>
+          <a href="matches.html" class="mobile-menu-link">Matches</a>
+          <a href="messages.html" class="mobile-menu-link">Messages</a>
+          <a href="listing.html" class="navbar-link">List A Room</a>
+          <a href="roommate.html" class="navbar-link">Find A RoomMate</a>
+          <div class="mobile-menu-actions">
+            <a href="login.html" class="btn btn-ghost btn-full">Log in</a>
+            <a href="signup.html" class="btn btn-primary btn-full active">Sign up</a>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
   
-      <main>
-        <div class="auth-container">
-          <div class="auth-header">
-            <a href="index.html" class="back-link">
-              <i data-lucide="arrow-left"></i>
+    <main>
+      <div class="auth-container">
+        <div class="auth-header">
+          <a href="index.html" class="back-link">
+            <i data-lucide="arrow-left"></i>
               Back to home
-            </a>
-            <h1 class="auth-title">Create your account</h1>
-            <p class="auth-subtitle">
+          </a>
+          <h1 class="auth-title">Create your account</h1>
+          <p class="auth-subtitle">
               Already have an account?
               <a href="login.html" class="auth-link">Log in</a>
+          </p>
+        </div>
+  
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Sign Up</h2>
+            <p class="card-description">Hi! New here? Let's create your account, then.</p>
             </p>
           </div>
+        
+        <form id="signup-form" class="card-content">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Raghav Verma" required>
+            <p class="error-message" id="name-error"></p>
+          </div>
   
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Sign Up</h2>
-              <p class="card-description">Hi! New here? Let's create your account, then.</p>
-              </p>
-            </div>
-            <form id="signup-form" class="card-content">
-              <div class="form-group">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Raghav Verma" required>
-                <p class="error-message" id="name-error"></p>
-              </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="raghaverma@gmail.com" required>
+            <p class="error-message" id="email-error"></p>
+          </div>
   
-              <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="raghaverma@gmail.com" required>
-                <p class="error-message" id="email-error"></p>
-              </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
+            <p class="error-message" id="password-error"></p>
+          </div>
   
-              <div class="form-group">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
-                <p class="error-message" id="password-error"></p>
-              </div>
-  
-              <div class="form-group">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="••••••••" required>
-                <p class="error-message" id="confirmPassword-error"></p>
-              </div>
+          <div class="form-group">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="••••••••" required>
+            <p class="error-message" id="confirmPassword-error"></p>
+          </div>
 
-              <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
-            </form>
+          <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+        </form>
           </div>
         </div>
-      </main>
+    </main>
   
       <!-- Footer -->
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-bottom">
-            <p class="copyright">
-              © <span id="current-year"></span> RoomieRadar. All rights reserved.
-            </p>
-            <div class="social-links">
-              <a href="#" aria-label="Facebook">
-                <i data-lucide="facebook"></i>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <i data-lucide="instagram"></i>
-              </a>
-              <a href="#" aria-label="Twitter">
-                <i data-lucide="twitter"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    <footer class = "footer">
+      <p class="copyright">
+          © <span id="current-year"></span> RoomieRadar. All rights reserved.
+      </p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>    
+    </footer>
+  </div>
   
-    <script src="index.js"></script>
-    <script src="scripts/auth.js"></script>
+  <script src="index.js"></script>
+  <script src="auth.js"></script>
   </body>
   </html>
   
