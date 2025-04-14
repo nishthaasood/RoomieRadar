@@ -181,7 +181,9 @@ h6 {
 .navbar {
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 50;
+  height: 4rem;
   width: 100%;
   border-bottom: 1px solid var(--border);
   background-color: rgba(255, 255, 255, 0.95);
@@ -190,8 +192,9 @@ h6 {
 }
 
 .navbar .container {
+  max-width: 1200px;
   display: flex;
-  height: 4rem;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
 }

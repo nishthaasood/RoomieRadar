@@ -25,7 +25,10 @@
 html {
   scroll-behavior: smooth;
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -51,9 +54,26 @@ main {
   text-align: center;
 }
 
-a {
+a{
   color: inherit;
   text-decoration: none;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  
+}
+  
+.container {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  
 }
 
 .btn {
@@ -141,7 +161,9 @@ a {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 50;
+  height: 4rem;
   width: 100%;
   border-bottom: 1px solid var(--border);
   background-color: rgba(255, 255, 255, 0.95);
@@ -151,12 +173,11 @@ a {
 
 .navbar .container {
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  height: 4rem;
+  height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  
 }
 
 .navbar-logo {
@@ -260,7 +281,7 @@ a {
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 28px;
   font-weight: bold;
   color: #1f2937;
@@ -271,8 +292,15 @@ p {
   font-size: 14px;
 }
 
+.heading{
+  font-size: 24px;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+  
+
 .signup-link {
-  color: #a855f7;
+  color: #6721a8;
   text-decoration: none;
 }
 
@@ -317,6 +345,8 @@ input[type="password"] {
   border-radius: 8px;
 }
 
+  
+
 .options {
   display: flex;
   justify-content: space-between;
@@ -326,9 +356,18 @@ input[type="password"] {
 }
 
 .forgot {
-  margin-top: 10px;
-  color: #a855f7;
+  margin:10px;
+  margin-bottom: 4px;
+  margin-left: 50px;
+  font-size: 14px;
+  color: #5c1f95;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot:hover {
+  color: #4c1d95;
+  text-decoration: underline;
 }
 
 .forgot:hover {
@@ -368,4 +407,79 @@ width: 100%;
   font-size: 12px;
   margin-top: 4px;
 }
+
+.footer {
+  background-color: var(--background);
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+  left: 50%;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  width: 100vw;            
+  box-sizing: border-box;  
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--foreground);
+}
+
+body, main, footer {
+  outline: 2px solid red;
+}
+
+body::after, html::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Testing outline - remove later */
+body, main, footer {
+  outline: 1px solid red;
+}
+
+
 
